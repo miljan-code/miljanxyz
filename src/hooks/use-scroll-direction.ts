@@ -17,5 +17,5 @@ export const useScrollDirection = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [scrollPosition]);
 
-  return scrollDirection;
+  return { scrollDirection, scrollPosition };
 };

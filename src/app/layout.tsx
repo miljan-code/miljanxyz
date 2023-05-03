@@ -1,6 +1,6 @@
 import { Cabin } from 'next/font/google';
-import Navigation from '@/components/Navigation';
-import './globals.css';
+import Navigation from '@/components/navigation';
+import '@/styles/globals.css';
 
 export const metadata = {
   title: 'Miljan — web developer',

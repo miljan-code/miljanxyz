@@ -12,6 +12,16 @@ module.exports = {
         dark: '#222831',
         light: '#fbfcfc',
       },
+      zIndex: {
+        100: '100',
+        200: '200',
+        300: '300',
+        500: '500',
+        1000: '1000',
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
     },
   },
   plugins: [],
