@@ -6,7 +6,7 @@ import { Decor } from '@/components/ui/decor';
 import { Skill } from '@/components/ui/skill';
 import { Icons } from '@/components/ui/icons';
 import { UnderlinedLink } from '@/components/ui/underlined-link';
-import { Tabs } from '@/components/ui/tabs';
+import { Tabs } from '@/components/tabs';
 
 export default function Home() {
   return (
@@ -82,9 +82,11 @@ export default function Home() {
         <div className="relative z-10 mx-auto max-w-4xl px-10 py-20 xl:px-0">
           <SectionTitle>Education</SectionTitle>
           <Decor.Graduate />
-          <Tabs />
+          <Tabs content={homepageConfig.eduTabs} />
         </div>
       </section>
+
+      {/* PROJECTS Section */}
     </>
   );
 }
