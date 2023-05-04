@@ -22,6 +22,13 @@ module.exports = {
       backdropBlur: {
         xs: '2px',
       },
+      screens: {
+        xs: '400px',
+        sm: '640px',
+        md: '769px',
+        lg: '840px',
+        xl: '1025px',
+      },
     },
   },
   plugins: [],

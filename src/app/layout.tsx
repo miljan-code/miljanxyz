@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={cabin.className}>
         <Navigation />
-        <>{children}</>
+        <main>{children}</main>
       </body>
     </html>
   );
