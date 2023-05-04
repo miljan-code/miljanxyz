@@ -1,5 +1,5 @@
 import { Cabin } from 'next/font/google';
-import Navigation from '@/components/navigation';
+import { Navigation } from '@/components/navigation';
 import '@/styles/globals.css';
 
 export const metadata = {

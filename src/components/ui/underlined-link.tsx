@@ -7,7 +7,7 @@ interface UnderlinedLinkProps {
   color: 'dark' | 'primary';
 }
 
-const UnderlinedLink: React.FC<UnderlinedLinkProps> = ({
+export const UnderlinedLink: React.FC<UnderlinedLinkProps> = ({
   children,
   href,
   color,
@@ -41,5 +41,3 @@ const UnderlinedLink: React.FC<UnderlinedLinkProps> = ({
     </div>
   );
 };
-
-export default UnderlinedLink;

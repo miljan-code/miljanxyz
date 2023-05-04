@@ -2,7 +2,7 @@ import { homepageConfig } from '@/config/homepage';
 import Button from '@/components/ui/button';
 import NavLink from '@/components/ui/nav-link';
 
-const Menu = () => {
+export const Menu = () => {
   return (
     <div className="hidden items-center gap-6 md:flex">
       <nav className="flex items-center gap-6">
@@ -18,5 +18,3 @@ const Menu = () => {
     </div>
   );
 };
-
-export default Menu;

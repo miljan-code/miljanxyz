@@ -3,7 +3,7 @@ interface CtaButtonProps {
   href: string;
 }
 
-const CtaButton: React.FC<CtaButtonProps> = ({ href, children }) => {
+export const CtaButton: React.FC<CtaButtonProps> = ({ href, children }) => {
   return (
     <div className="group relative inline-block">
       <a
@@ -16,5 +16,3 @@ const CtaButton: React.FC<CtaButtonProps> = ({ href, children }) => {
     </div>
   );
 };
-
-export default CtaButton;

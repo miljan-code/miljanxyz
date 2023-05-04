@@ -1,10 +1,10 @@
 'use client';
 
 import { useScrollDirection } from '@/hooks/use-scroll-direction';
-import Logo from '@/components/logo';
-import Menu from '@/components/menu';
+import { Logo } from '@/components/logo';
+import { Menu } from '@/components/menu';
 
-const Navigation = () => {
+export const Navigation = () => {
   const { scrollDirection, scrollPosition } = useScrollDirection();
 
   if (scrollDirection === 'down') {
@@ -23,5 +23,3 @@ const Navigation = () => {
     </header>
   );
 };
-
-export default Navigation;

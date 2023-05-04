@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 
-const Logo = () => {
+export const Logo = () => {
   const router = useRouter();
 
   const handleRoute = () => router.push('/');
@@ -19,5 +19,3 @@ const Logo = () => {
     />
   );
 };
-
-export default Logo;

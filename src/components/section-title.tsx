@@ -2,7 +2,7 @@ interface SectionTitleProps {
   children: React.ReactNode;
 }
 
-const SectionTitle: React.FC<SectionTitleProps> = ({ children }) => {
+export const SectionTitle: React.FC<SectionTitleProps> = ({ children }) => {
   return (
     <div className="relative z-10 mb-14 inline-block">
       <h2 className="relative z-10 text-3xl font-semibold">{children}</h2>
@@ -10,5 +10,3 @@ const SectionTitle: React.FC<SectionTitleProps> = ({ children }) => {
     </div>
   );
 };
-
-export default SectionTitle;

@@ -1,18 +1,19 @@
 import Image from 'next/image';
 import { homepageConfig } from '@/config/homepage';
-import Decor from '@/components/ui/decor';
-import CtaButton from '@/components/ui/cta-button';
-import SectionTitle from '@/components/section-title';
+import { CtaButton } from '@/components/ui/cta-button';
+import { SectionTitle } from '@/components/section-title';
+import { Decor } from '@/components/ui/decor';
 import { Skill } from '@/components/ui/skill';
 import { Icons } from '@/components/ui/icons';
-import UnderlinedLink from '@/components/ui/underlined-link';
+import { UnderlinedLink } from '@/components/ui/underlined-link';
+import { Tabs } from '@/components/ui/tabs';
 
 export default function Home() {
   return (
     <>
       {/* HERO section */}
       <section className="flex h-screen items-center justify-center bg-dark py-32 text-white md:py-0">
-        <Decor />
+        <Decor.Planets />
         <div className="relative z-10 space-y-4 px-6 text-center sm:px-10 lg:px-0 lg:text-left">
           <p className="text-lg font-normal text-primary">
             Hi there, my name is
@@ -77,6 +78,13 @@ export default function Home() {
       </section>
 
       {/* EDUCATION Section */}
+      <section className="mb-10 text-dark" id="education">
+        <div className="relative z-10 mx-auto max-w-4xl px-10 py-20 xl:px-0">
+          <SectionTitle>Education</SectionTitle>
+          <Decor.Graduate />
+          <Tabs />
+        </div>
+      </section>
     </>
   );
 }
