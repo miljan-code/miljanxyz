@@ -1,6 +1,6 @@
 import { homepageConfig } from '@/config/homepage';
-import Button from '@/components/ui/button';
-import NavLink from '@/components/ui/nav-link';
+import { Button } from '@/components/ui/button';
+import { NavLink } from '@/components/nav-link';
 
 export const Menu = () => {
   return (

@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import { homepageConfig } from '@/config/homepage';
-import { CtaButton } from '@/components/ui/cta-button';
+import { CtaButton } from '@/components/cta-button';
 import { SectionTitle } from '@/components/section-title';
 import { Decor } from '@/components/ui/decor';
-import { Skill } from '@/components/ui/skill';
+import { Tag } from '@/components/ui/tag';
 import { Icons } from '@/components/ui/icons';
-import { UnderlinedLink } from '@/components/ui/underlined-link';
+import { UnderlinedLink } from '@/components/underlined-link';
 import { Tabs } from '@/components/tabs';
+import { projectsConfig } from '@/config/projects';
+import ProjectCard from '@/components/project-card';
 
 export default function Home() {
   return (
@@ -58,9 +60,9 @@ export default function Home() {
               {/* List of skills */}
               <div className="relative z-10 mb-10 flex flex-wrap items-center gap-3 backface-hidden">
                 {homepageConfig.skills.map(item => (
-                  <Skill key={item} animation="upOnHover">
-                    <Skill.Label>{item}</Skill.Label>
-                  </Skill>
+                  <Tag key={item} animation="upOnHover">
+                    <Tag.Label>{item}</Tag.Label>
+                  </Tag>
                 ))}
               </div>
               {/* Summary */}
@@ -87,6 +89,22 @@ export default function Home() {
       </section>
 
       {/* PROJECTS Section */}
+      <section className="mb-40 overflow-x-hidden text-dark" id="projects">
+        <div className="relative z-10 mx-auto max-w-5xl px-10 py-20 xl:px-0">
+          <div className="mx-auto mb-4 max-w-4xl px-2 md:mb-6 xl:px-0">
+            <SectionTitle>My work</SectionTitle>
+          </div>
+          {/* Projects list */}
+          <div className="mb-20 flex flex-col justify-center gap-24">
+            {projectsConfig.projects.map(item => (
+              <ProjectCard key={item.title} content={item} />
+            ))}
+          </div>
+          <div className="flex items-center justify-center">
+            <UnderlinedLink href="/projects">Explore more</UnderlinedLink>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

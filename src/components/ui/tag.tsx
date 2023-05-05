@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { type VariantProps, cva } from 'class-variance-authority';
 
-const skillVariants = cva('flex w-fit cursor-pointer items-center rounded-sm', {
+const tagVariants = cva('flex w-fit cursor-pointer items-center rounded-sm', {
   variants: {
     variant: {
       default: 'bg-dark text-light',
@@ -23,28 +23,28 @@ const skillVariants = cva('flex w-fit cursor-pointer items-center rounded-sm', {
   },
 });
 
-interface SkillProps
+interface TagProps
   extends React.HTMLAttributes<HTMLDivElement>,
-    VariantProps<typeof skillVariants> {}
+    VariantProps<typeof tagVariants> {}
 
-export function Skill({
+export function Tag({
   className,
   variant,
   animation,
   size,
   ...props
-}: SkillProps) {
+}: TagProps) {
   return (
     <div
-      className={cn(skillVariants({ variant, size, animation, className }))}
+      className={cn(tagVariants({ variant, size, animation, className }))}
       {...props}
     />
   );
 }
 
-interface SkillIconProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
+interface TagIconProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
-Skill.Icon = function SkillIcon({ className, src }: SkillIconProps) {
+Tag.Icon = function TagIcon({ className, src }: TagIconProps) {
   return (
     <Image
       src={src || ''}
@@ -56,8 +56,8 @@ Skill.Icon = function SkillIcon({ className, src }: SkillIconProps) {
   );
 };
 
-interface SkillLabelProps extends React.HTMLAttributes<HTMLSpanElement> {}
+interface TagLabelProps extends React.HTMLAttributes<HTMLSpanElement> {}
 
-Skill.Label = function SkillLabel({ className, ...props }: SkillLabelProps) {
+Tag.Label = function TagLabel({ className, ...props }: TagLabelProps) {
   return <span className="text-xs xs:text-sm sm:text-base" {...props} />;
 };

@@ -6,7 +6,7 @@ interface NavLinkProps {
   index: number;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ children, href, index }) => {
+export const NavLink: React.FC<NavLinkProps> = ({ children, href, index }) => {
   return (
     <Link href={href} className="space-x-0.5">
       <span className="text-xs text-primary">0{index}.</span>{' '}
@@ -16,5 +16,3 @@ const NavLink: React.FC<NavLinkProps> = ({ children, href, index }) => {
     </Link>
   );
 };
-
-export default NavLink;
