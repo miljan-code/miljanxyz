@@ -53,7 +53,20 @@ const GraduateHat = () => {
   );
 };
 
+const PaperPlane = () => {
+  return (
+    <Image
+      src="/images/paper-plane.png"
+      alt="paper plane"
+      height={409}
+      width={476}
+      className="mt-6 hidden h-24 w-fit sm:inline-block"
+    />
+  );
+};
+
 export const Decor = {
-  Planets: Planets,
+  Planets,
   Graduate: GraduateHat,
+  PaperPlane,
 };

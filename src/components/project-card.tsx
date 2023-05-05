@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
         >
           {title}
         </Link>
-        <div className="flex flex-wrap items-center justify-center gap-1 md:flex-nowrap md:justify-start">
+        <div className="flex flex-wrap items-center justify-center gap-1 md:justify-start">
           {techStack.map(item => (
             <Tag key={item.name} className="cursor-auto">
               <Tag.Icon src={item.logo} />

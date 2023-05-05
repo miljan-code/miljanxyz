@@ -44,5 +44,5 @@ module.exports = {
       },
     },
   },
-  plugins: [backfaceVisibility],
+  plugins: [backfaceVisibility, require('tailwindcss-animate')],
 };

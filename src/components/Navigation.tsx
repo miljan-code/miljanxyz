@@ -1,25 +1,20 @@
-'use client';
-
-import { useScrollDirection } from '@/hooks/use-scroll-direction';
-import { Logo } from '@/components/logo';
-import { Menu } from '@/components/menu';
+import { homepageConfig } from '@/config/homepage';
+import { Button } from '@/components/ui/button';
+import { NavLink } from '@/components/nav-link';
 
 export const Navigation = () => {
-  const { scrollDirection, scrollPosition } = useScrollDirection();
-
-  if (scrollDirection === 'down') {
-    return null;
-  }
-
   return (
-    <header
-      className={`
-      ${scrollPosition === 0 ? 'shadow-none' : 'shadow-md'}
-      fixed z-100 flex w-full items-center justify-between bg-dark/95 px-14 py-4 text-white backdrop-blur-xs
-      `}
-    >
-      <Logo />
-      <Menu />
-    </header>
+    <div className="hidden items-center gap-6 md:flex">
+      <nav className="flex items-center gap-6">
+        {homepageConfig.mainNav.map((item, i) => (
+          <NavLink key={item.label} href={item.href} index={i + 1}>
+            {item.label}
+          </NavLink>
+        ))}
+      </nav>
+      <a href="/store/resume.pdf" target="_blank">
+        <Button variant="outlined">Resume</Button>
+      </a>
+    </div>
   );
 };

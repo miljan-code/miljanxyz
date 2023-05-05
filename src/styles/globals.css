@@ -4,8 +4,12 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
     @apply h-full;
+  }
+
+  body {
+    scroll-behavior: smooth !important;
   }
 
   ::-webkit-scrollbar {

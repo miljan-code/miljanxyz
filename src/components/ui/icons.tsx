@@ -5,6 +5,10 @@ import {
   Link,
   Info,
   ExternalLink,
+  Linkedin,
+  Mail,
+  Menu,
+  X,
 } from 'lucide-react';
 
 export const Icons = {
@@ -14,4 +18,8 @@ export const Icons = {
   Link,
   Info,
   ExternalLink,
+  Linkedin,
+  Mail,
+  Menu,
+  Close: X,
 };
