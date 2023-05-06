@@ -1,14 +1,16 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import slugify from 'slugify';
+import { cn } from '@/lib/utils';
 import { Tag } from '@/components/ui/tag';
 import { Icons } from '@/components/ui/icons';
 
 interface ProjectCardProps {
   content: ProjectContent;
+  index: number;
 }
 
-const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
+export const ProjectCard: React.FC<ProjectCardProps> = ({ content, index }) => {
   const { title, coverUrl, description, techStack, demoUrl, githubUrl } =
     content;
 
@@ -16,7 +18,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
 
   return (
     <div className="flex flex-col gap-3 md:grid md:grid-cols-7 md:items-center md:gap-6">
-      <div className="group relative col-span-3 overflow-hidden rounded-md border border-dark/10">
+      <div
+        className={cn('group relative overflow-hidden rounded-md', {
+          'col-start-1 col-end-4': index % 2 === 0,
+          'col-start-5 col-end-8 row-start-1': index % 2 !== 0,
+        })}
+      >
         <Image
           src={coverUrl}
           alt={title}
@@ -27,15 +34,20 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
         <a
           href={demoUrl}
           target="_blank"
-          className="absolute inset-0 flex w-full cursor-pointer items-center justify-center transition duration-300 group-hover:bg-dark/25"
+          className="absolute inset-0 flex w-full cursor-pointer items-center justify-center transition duration-300"
         >
           <Icons.ExternalLink
             size={96}
-            className="text-white opacity-0 transition duration-300 group-hover:opacity-100"
+            className="text-slate-400 opacity-0 transition duration-300 group-hover:opacity-100"
           />
         </a>
       </div>
-      <div className="col-span-4 flex flex-col gap-4">
+      <div
+        className={cn('flex flex-col gap-4', {
+          'col-start-4 col-end-8': index % 2 === 0,
+          'col-start-1 col-end-5 row-start-1': index % 2 !== 0,
+        })}
+      >
         <Link
           href={slug}
           className="text-center text-3xl font-semibold md:w-fit md:text-left"
@@ -66,5 +78,3 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ content }) => {
     </div>
   );
 };
-
-export default ProjectCard;

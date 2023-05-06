@@ -10,7 +10,12 @@ const ProjectsPage = () => {
       </Heading>
       <div className="mx-auto flex max-w-5xl flex-col gap-20 px-10 pb-16 xl:px-0">
         {projectsConfig.projects.map((item, i) => (
-          <Card key={item.title} primary={i % 2 !== 0} content={item} />
+          <Card
+            key={item.title}
+            color={i % 2 !== 0 ? 'primary' : 'light'}
+            content={item}
+            index={i}
+          />
         ))}
       </div>
       <div className="mt-24 h-0.5 w-full bg-gray-700/50" />

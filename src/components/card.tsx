@@ -7,10 +7,13 @@ import { UnderlinedLink } from '@/components/underlined-link';
 
 interface CardProps {
   content: ProjectContent;
-  primary?: boolean;
+  color?: 'primary' | 'light' | 'dark';
+  index: number;
 }
 
-const Card: React.FC<CardProps> = ({ primary = true, content }) => {
+// TODO: FIXME: Responsivness
+
+const Card: React.FC<CardProps> = ({ color = 'primary', content, index }) => {
   const { title, coverUrl, description, demoUrl, techStack, githubUrl } =
     content;
 
@@ -21,23 +24,27 @@ const Card: React.FC<CardProps> = ({ primary = true, content }) => {
       className={cn(
         'h-96 overflow-hidden rounded-2xl border border-gray-700/50 ',
         {
-          'bg-gradient-to-b from-dark to-primary/10': primary,
-          'bg-gradient-to-b from-dark to-slate-200/10': !primary,
+          'bg-gradient-to-b from-dark to-primary/10': color === 'primary',
+          'bg-gradient-to-b from-dark to-slate-200/10': color === 'light',
+          'border-slate-100 bg-gradient-to-b from-white to-dark/10':
+            color === 'dark',
         }
       )}
     >
       <div
         className={cn('h-[1px] w-full', {
           'bg-gradient-to-r from-transparent via-primary to-transparent':
-            primary,
+            color === 'primary',
           'bg-gradient-to-r from-transparent via-slate-200 to-transparent':
-            !primary,
+            color === 'light',
+          'via-dark-200 bg-gradient-to-r from-transparent to-transparent':
+            color === 'dark',
         })}
       />
       <div
         className={cn('flex h-full gap-2', {
-          'flex-row-reverse': primary,
-          'flex-row': !primary,
+          'flex-row-reverse': index % 2 !== 0,
+          'flex-row': index % 2 === 0,
         })}
       >
         <div className="flex flex-1 flex-col justify-end gap-4 p-6">
@@ -52,17 +59,13 @@ const Card: React.FC<CardProps> = ({ primary = true, content }) => {
             ))}
           </div>
           <p className="text-white/70">{description}</p>
-          <UnderlinedLink
-            href={slug}
-            color={primary ? 'primary' : 'light'}
-            className="-mt-1 mb-2"
-          >
+          <UnderlinedLink href={slug} color={color} className="-mt-1 mb-2">
             Read more
           </UnderlinedLink>
           <div className="flex items-center gap-2">
             <a href={demoUrl} target="_blank">
               <Button
-                variant={primary ? 'light' : 'default'}
+                variant={index % 2 !== 0 ? 'light' : 'default'}
                 rounded="full"
                 className="w-fit"
               >
@@ -71,7 +74,7 @@ const Card: React.FC<CardProps> = ({ primary = true, content }) => {
             </a>
             <a href={githubUrl} target="_blank">
               <Button
-                variant={primary ? 'light' : 'default'}
+                variant={index % 2 !== 0 ? 'light' : 'default'}
                 rounded="full"
                 className="w-fit"
               >

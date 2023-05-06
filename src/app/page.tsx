@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { homepageConfig } from '@/config/homepage';
+import { projectsConfig } from '@/config/projects';
 import { CtaButton } from '@/components/cta-button';
 import { SectionTitle } from '@/components/section-title';
 import { Decor } from '@/components/ui/decor';
@@ -7,8 +8,7 @@ import { Tag } from '@/components/ui/tag';
 import { Icons } from '@/components/ui/icons';
 import { UnderlinedLink } from '@/components/underlined-link';
 import { Tabs } from '@/components/tabs';
-import { projectsConfig } from '@/config/projects';
-import ProjectCard from '@/components/project-card';
+import { ProjectCard } from '@/components/project-card';
 
 export default function Home() {
   return (
@@ -95,9 +95,9 @@ export default function Home() {
             <SectionTitle>My work</SectionTitle>
           </div>
           {/* Projects list */}
-          <div className="mb-20 flex flex-col justify-center gap-28">
-            {projectsConfig.projects.map(item => (
-              <ProjectCard key={item.title} content={item} />
+          <div className="mb-20 flex flex-col justify-center gap-32">
+            {projectsConfig.projects.map((item, i) => (
+              <ProjectCard key={item.title} content={item} index={i} />
             ))}
           </div>
           <div className="flex items-center justify-center">
