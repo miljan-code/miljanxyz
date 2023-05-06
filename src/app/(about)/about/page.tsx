@@ -4,6 +4,8 @@ import { cn } from '@/lib/utils';
 import { allAbouts } from 'contentlayer/generated';
 import { Mdx } from '@/components/mdx';
 import { Heading } from '@/components/ui/heading';
+import { Button } from '@/components/ui/button';
+import { Decor } from '@/components/ui/decor';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -15,7 +17,7 @@ const AboutPage = () => {
 
   return (
     <section className={cn('bg-dark pt-28 text-light', manrope.className)}>
-      <div className="relative z-10 max-w-5xl px-10 xl:px-0">
+      <div className="relative z-10 mx-auto max-w-5xl px-10 xl:px-0">
         <Heading>
           <Heading.Sublabel>Hello</Heading.Sublabel>
           <Heading.Label>Here&apos;s my story.</Heading.Label>
@@ -27,10 +29,17 @@ const AboutPage = () => {
           width={1131}
           className="float-left mr-6 mt-3 hidden h-1/4 w-1/4 rounded-lg md:block"
         />
-        <div className="space-y-3">
+        <div className="mb-6 space-y-3">
           <Mdx code={about.body.code} />
         </div>
+        <div className="flex items-center justify-between">
+          <a href="/store/resume.pdf" target="_blank">
+            <Button>Resume</Button>
+          </a>
+          <Decor.ReactIcon />
+        </div>
       </div>
+      <div className="mt-24 h-0.5 w-full bg-gray-700/50" />
     </section>
   );
 };

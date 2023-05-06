@@ -65,8 +65,21 @@ const PaperPlane = () => {
   );
 };
 
+const ReactIcon = () => {
+  return (
+    <Image
+      src="/icons/react-red.png"
+      width={96}
+      height={96}
+      alt="Red React logo"
+      className="h-auto w-12 animate-spin-slow"
+    />
+  );
+};
+
 export const Decor = {
   Planets,
   Graduate: GraduateHat,
   PaperPlane,
+  ReactIcon,
 };

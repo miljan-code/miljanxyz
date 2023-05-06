@@ -45,7 +45,7 @@ module.exports = {
       keyframes: {
         'bounce-rotate': {
           '0%': { transform: 'translateY(0px) rotate(0deg)' },
-          '50%': { transform: 'translateY(-60px) rotate(30deg)' },
+          '50%': { transform: 'translateY(-50px) rotate(30deg)' },
           '100%': { transform: 'translateY(0) rotate(0deg)' },
         },
       },
@@ -53,6 +53,7 @@ module.exports = {
         'bounce-rotate-fast': 'bounce-rotate 9s linear infinite',
         'bounce-rotate-medium': 'bounce-rotate 11s linear infinite',
         'bounce-rotate-slow': 'bounce-rotate 13s linear infinite',
+        'spin-slow': 'spin 3s linear infinite;',
       },
     },
   },

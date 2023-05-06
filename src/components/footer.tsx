@@ -6,7 +6,7 @@ import { Icons } from './ui/icons';
 export const Footer = () => {
   return (
     <footer className="bg-dark text-light">
-      <div className="mx-auto flex max-w-3xl flex-col px-10 py-20 sm:flex-row sm:justify-between md:px-0">
+      <div className="mx-auto flex max-w-4xl flex-col px-10 py-20 sm:flex-row sm:justify-between md:px-0">
         <div className="flex flex-col items-center sm:items-start">
           {/* prettier-ignore */}
           <SectionTitle className="w-fit text-white">

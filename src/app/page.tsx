@@ -95,7 +95,7 @@ export default function Home() {
             <SectionTitle>My work</SectionTitle>
           </div>
           {/* Projects list */}
-          <div className="mb-20 flex flex-col justify-center gap-24">
+          <div className="mb-20 flex flex-col justify-center gap-28">
             {projectsConfig.projects.map(item => (
               <ProjectCard key={item.title} content={item} />
             ))}

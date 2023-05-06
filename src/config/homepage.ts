@@ -10,7 +10,7 @@ export const homepageConfig = {
     },
     {
       label: 'Projects',
-      href: '/#projects',
+      href: '/projects',
     },
     {
       label: 'Blog',

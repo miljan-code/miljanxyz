@@ -1,24 +1,26 @@
 import Link from 'next/link';
 import { cn } from '@/lib/utils';
 
-interface UnderlinedLinkProps {
+interface UnderlinedLinkProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
   href: string;
-  color?: 'dark' | 'primary';
+  color?: 'dark' | 'primary' | 'light';
 }
 
 export const UnderlinedLink: React.FC<UnderlinedLinkProps> = ({
   children,
   href,
   color = 'dark',
+  className,
 }) => {
   return (
-    <div className="leading-0 group relative h-full w-fit">
+    <div className={cn('leading-0 group relative w-fit', className)}>
       <Link
         href={href}
         className={cn('z-1 relative text-sm font-semibold', {
           'text-dark': color === 'dark',
           'text-primary': color === 'primary',
+          'text-slate-100': color === 'light',
         })}
       >
         {children}
@@ -30,6 +32,7 @@ export const UnderlinedLink: React.FC<UnderlinedLinkProps> = ({
             {
               'border-dark': color === 'dark',
               'border-primary': color === 'primary',
+              'border-slate-100': color === 'light',
             }
           )}
         />
