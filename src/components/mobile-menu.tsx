@@ -46,9 +46,9 @@ export const MobileMenu = () => {
   const handleShowMenu = () => setShowMenu(prev => !prev);
 
   return (
-    <>
+    <div className="md:hidden">
       {!showMenu && <Icons.Menu onClick={handleShowMenu} size={36} />}
       {showMenu && <Menu onCloseMenu={handleShowMenu} />}
-    </>
+    </div>
   );
 };

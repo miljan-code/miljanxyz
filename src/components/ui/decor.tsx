@@ -25,17 +25,17 @@ const Planets = () => {
       <PlanetsItem
         imageUrl="/images/planet-1.png"
         size={250}
-        className="absolute left-[5%] top-1/4 lg:top-[20%] xl:left-[10%] xl:top-[10%]"
+        className="absolute left-[5%] top-1/4 animate-bounce-rotate-slow lg:top-[20%] xl:left-[10%] xl:top-[10%]"
       />
       <PlanetsItem
         imageUrl="/images/planet-2.png"
         size={250}
-        className="absolute right-[15%] top-[15%]"
+        className="absolute right-[15%] top-[15%] animate-bounce-rotate-medium"
       />
       <PlanetsItem
         imageUrl="/images/planet-3.png"
         size={250}
-        className="absolute bottom-0 right-[15%] xl:bottom-[5%] xl:right-1/4"
+        className="absolute bottom-0 right-[15%] animate-bounce-rotate-fast xl:bottom-[5%] xl:right-1/4"
       />
     </div>
   );

@@ -42,7 +42,19 @@ module.exports = {
         lg: '840px',
         xl: '1025px',
       },
+      keyframes: {
+        'bounce-rotate': {
+          '0%': { transform: 'translateY(0px) rotate(0deg)' },
+          '50%': { transform: 'translateY(-60px) rotate(30deg)' },
+          '100%': { transform: 'translateY(0) rotate(0deg)' },
+        },
+      },
+      animation: {
+        'bounce-rotate-fast': 'bounce-rotate 9s linear infinite',
+        'bounce-rotate-medium': 'bounce-rotate 11s linear infinite',
+        'bounce-rotate-slow': 'bounce-rotate 13s linear infinite',
+      },
     },
   },
-  plugins: [backfaceVisibility, require('tailwindcss-animate')],
+  plugins: [backfaceVisibility],
 };
