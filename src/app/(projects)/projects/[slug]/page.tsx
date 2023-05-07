@@ -1,11 +1,35 @@
+import { notFound } from 'next/navigation';
+import { allProjects } from 'contentlayer/generated';
 import { Heading } from '@/components/ui/heading';
 
-const ProjectPage = () => {
+interface ProjectsPageProps {
+  params: { slug: string };
+}
+
+const getProjectFromSlug = async (slug: string) => {
+  const project = allProjects.find(project => project.slug === slug);
+
+  if (!project) return null;
+
+  return project;
+};
+
+export const generateStaticParams = async () => {
+  return allProjects.map(project => ({
+    slug: project.slug,
+  }));
+};
+
+const ProjectPage = async ({ params }: ProjectsPageProps) => {
+  const project = await getProjectFromSlug(params.slug);
+
+  if (!project) return notFound();
+
   return (
     <section className="bg-dark pt-28 text-light">
       <div className="mt-4 flex h-72 items-center justify-center">
         <Heading>
-          <Heading.Label>Coming Soon</Heading.Label>
+          <Heading.Label>{project.title}</Heading.Label>
         </Heading>
       </div>
       <div className="mt-24 h-0.5 w-full bg-gray-700/50" />

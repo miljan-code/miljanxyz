@@ -1,6 +1,6 @@
-import { projectsConfig } from '@/config/projects';
+import { allProjects } from 'contentlayer/generated';
 import { Heading } from '@/components/ui/heading';
-import Card from '@/components/card';
+import { Card } from '@/components/card';
 
 const ProjectsPage = () => {
   return (
@@ -9,7 +9,7 @@ const ProjectsPage = () => {
         <Heading.Label>My work.</Heading.Label>
       </Heading>
       <div className="mx-auto flex max-w-5xl flex-col gap-20 px-10 pb-16 xl:px-0">
-        {projectsConfig.projects.map((item, i) => (
+        {allProjects.map((item, i) => (
           <Card
             key={item.title}
             color={i % 2 !== 0 ? 'primary' : 'light'}

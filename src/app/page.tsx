@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { homepageConfig } from '@/config/homepage';
-import { projectsConfig } from '@/config/projects';
+import { allProjects } from 'contentlayer/generated';
 import { CtaButton } from '@/components/cta-button';
 import { SectionTitle } from '@/components/section-title';
 import { Decor } from '@/components/ui/decor';
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
           {/* Projects list */}
           <div className="mb-20 flex flex-col justify-center gap-32">
-            {projectsConfig.projects.map((item, i) => (
+            {allProjects.map((item, i) => (
               <ProjectCard key={item.title} content={item} index={i} />
             ))}
           </div>

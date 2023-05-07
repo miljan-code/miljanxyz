@@ -1,20 +1,18 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import slugify from 'slugify';
 import { cn } from '@/lib/utils';
 import { Tag } from '@/components/ui/tag';
 import { Icons } from '@/components/ui/icons';
+import type { Project } from 'contentlayer/generated';
 
 interface ProjectCardProps {
-  content: ProjectContent;
+  content: Project;
   index: number;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({ content, index }) => {
   const { title, coverUrl, description, techStack, demoUrl, githubUrl } =
     content;
-
-  const slug = `/projects/${slugify(title, { lower: true })}`;
 
   return (
     <div className="flex flex-col gap-3 md:grid md:grid-cols-7 md:items-center md:gap-6">
@@ -49,16 +47,16 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ content, index }) => {
         })}
       >
         <Link
-          href={slug}
+          href={`/projects/${content.slug}`}
           className="text-center text-3xl font-semibold md:w-fit md:text-left"
         >
           {title}
         </Link>
         <div className="flex flex-wrap items-center justify-center gap-1 md:justify-start">
           {techStack.map(item => (
-            <Tag key={item.name} className="cursor-auto">
-              <Tag.Icon src={item.logo} />
-              <Tag.Label>{item.name}</Tag.Label>
+            <Tag key={item} className="cursor-auto">
+              <Tag.Icon src={`/icons/${item.toLowerCase()}.png`} />
+              <Tag.Label>{item}</Tag.Label>
             </Tag>
           ))}
         </div>
@@ -70,7 +68,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ content, index }) => {
           <a href={demoUrl} target="_blank">
             <Icons.Link />
           </a>
-          <Link href={slug}>
+          <Link href={`/projects/${content.slug}`}>
             <Icons.Info />
           </Link>
         </div>
