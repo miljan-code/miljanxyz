@@ -11,18 +11,16 @@ interface CardProps {
   index: number;
 }
 
-// TODO: FIXME: Responsivness
-
 const Card: React.FC<CardProps> = ({ color = 'primary', content, index }) => {
   const { title, coverUrl, description, demoUrl, techStack, githubUrl } =
     content;
 
-  const slug = `/project/${slugify(title, { lower: true })}`;
+  const slug = `/projects/${slugify(title, { lower: true })}`;
 
   return (
     <div
       className={cn(
-        'h-96 overflow-hidden rounded-2xl border border-gray-700/50 ',
+        'overflow-hidden rounded-2xl border border-gray-700/50 md:h-96 ',
         {
           'bg-gradient-to-b from-dark to-primary/10': color === 'primary',
           'bg-gradient-to-b from-dark to-slate-200/10': color === 'light',
@@ -42,23 +40,23 @@ const Card: React.FC<CardProps> = ({ color = 'primary', content, index }) => {
         })}
       />
       <div
-        className={cn('flex h-full gap-2', {
+        className={cn('relative flex h-full gap-2', {
           'flex-row-reverse': index % 2 !== 0,
           'flex-row': index % 2 === 0,
         })}
       >
         <div className="flex flex-1 flex-col justify-end gap-4 p-6">
           <Link href={slug} className="w-fit">
-            <h3 className="text-3xl font-bold">{title}</h3>
+            <h3 className="text-2xl font-bold md:text-3xl">{title}</h3>
           </Link>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             {techStack.map(item => (
               <p key={item.name} className="text-primary">
                 {item.name}
               </p>
             ))}
           </div>
-          <p className="text-white/70">{description}</p>
+          <p className="text-sm text-white/70 md:text-base">{description}</p>
           <UnderlinedLink href={slug} color={color} className="-mt-1 mb-2">
             Read more
           </UnderlinedLink>
@@ -83,7 +81,7 @@ const Card: React.FC<CardProps> = ({ color = 'primary', content, index }) => {
             </a>
           </div>
         </div>
-        <div className="flex flex-1 items-end pb-6">
+        <div className="hidden flex-1 items-end pb-6 sm:flex">
           <Image
             src={coverUrl}
             alt={title}

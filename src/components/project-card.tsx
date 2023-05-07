@@ -14,7 +14,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ content, index }) => {
   const { title, coverUrl, description, techStack, demoUrl, githubUrl } =
     content;
 
-  const slug = `/project/${slugify(title, { lower: true })}`;
+  const slug = `/projects/${slugify(title, { lower: true })}`;
 
   return (
     <div className="flex flex-col gap-3 md:grid md:grid-cols-7 md:items-center md:gap-6">

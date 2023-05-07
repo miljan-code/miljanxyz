@@ -1,22 +1,15 @@
 import Image from 'next/image';
-import { Manrope } from 'next/font/google';
-import { cn } from '@/lib/utils';
 import { allAbouts } from 'contentlayer/generated';
 import { Mdx } from '@/components/mdx';
 import { Heading } from '@/components/ui/heading';
 import { Button } from '@/components/ui/button';
 import { Decor } from '@/components/ui/decor';
 
-const manrope = Manrope({
-  subsets: ['latin'],
-  weight: ['400'],
-});
-
 const AboutPage = () => {
   const [about] = allAbouts;
 
   return (
-    <section className={cn('bg-dark pt-28 text-light', manrope.className)}>
+    <section className="bg-dark pt-28 text-light">
       <div className="relative z-10 mx-auto max-w-5xl px-10 xl:px-0">
         <Heading>
           <Heading.Sublabel>Hello</Heading.Sublabel>
