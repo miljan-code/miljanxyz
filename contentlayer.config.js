@@ -20,6 +20,10 @@ export const Project = defineDocumentType(() => ({
   filePathPattern: `projects/**/*.mdx`,
   contentType: 'mdx',
   fields: {
+    order: {
+      type: 'number',
+      required: true,
+    },
     title: {
       type: 'string',
       required: true,

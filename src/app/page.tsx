@@ -11,6 +11,8 @@ import { Tabs } from '@/components/tabs';
 import { ProjectCard } from '@/components/project-card';
 
 export default function Home() {
+  const projects = allProjects.sort((a, b) => a.order - b.order);
+
   return (
     <>
       {/* HERO section */}
@@ -96,7 +98,7 @@ export default function Home() {
           </div>
           {/* Projects list */}
           <div className="mb-20 flex flex-col justify-center gap-32">
-            {allProjects.map((item, i) => (
+            {projects.map((item, i) => (
               <ProjectCard key={item.title} content={item} index={i} />
             ))}
           </div>
