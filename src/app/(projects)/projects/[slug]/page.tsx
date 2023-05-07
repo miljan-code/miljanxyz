@@ -27,14 +27,19 @@ const ProjectPage = async ({ params }: ProjectsPageProps) => {
 
   return (
     <section className="bg-dark pt-28 text-light">
-      <div className="mt-4 flex items-center justify-center">
+      {/* <div className="mt-4 flex items-center justify-center">
         <Heading>
           <Heading.Label>{project.title}</Heading.Label>
         </Heading>
+      </div> */}
+      <div className="mt-4 flex h-72 items-center justify-center">
+        <Heading>
+          <Heading.Label>Coming Soon</Heading.Label>
+        </Heading>
       </div>
-      <div className="mx-auto max-w-4xl px-10 xl:px-0">
+      {/* <div className="mx-auto max-w-4xl px-10 xl:px-0">
         <p>Hello World</p>
-      </div>
+      </div> */}
       <div className="mt-24 h-0.5 w-full bg-gray-700/50" />
     </section>
   );
