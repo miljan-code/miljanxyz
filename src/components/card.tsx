@@ -8,13 +8,15 @@ import type { Project } from 'contentlayer/generated';
 interface CardProps {
   content: Project;
   color?: 'primary' | 'light' | 'dark';
-  index: number;
+  index?: number;
 }
+
+// TODO: Make Card more reusable (for blog also)
 
 export const Card: React.FC<CardProps> = ({
   color = 'primary',
   content,
-  index,
+  index = 0,
 }) => {
   const { title, coverUrl, description, demoUrl, techStack, githubUrl } =
     content;
