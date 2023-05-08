@@ -38,7 +38,7 @@ export const homepageConfig = {
     'From the moment I got my first computer when I was 6 years old, I fell in love with technology and began to explore it in more detail. The inquisitive spirit that I carry within me has always encouraged me to explore and study new things and new technologies. On my path of research, of course, web technology also found its way, which I immediately fell in love with.',
   eduTabs: [
     {
-      label: 'School',
+      label: 'University',
       title: 'Informatics at Academy South Serbia',
       timePeriod: 'October 2021 — Present',
       achievedSkills: [

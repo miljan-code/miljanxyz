@@ -68,7 +68,7 @@ interface TabsProps {
 }
 
 export const Tabs: React.FC<TabsProps> = ({ content }) => {
-  const [activeList, setActiveList] = useState('School');
+  const [activeList, setActiveList] = useState('University');
 
   const activeContent = useMemo(
     () => content.find(tab => tab.label === activeList),
