@@ -36,7 +36,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ content, index }) => {
         >
           <Icons.ExternalLink
             size={96}
-            className="text-slate-400 opacity-0 transition duration-300 group-hover:opacity-100"
+            className="text-slate-800 opacity-0 transition duration-300 group-hover:opacity-100"
           />
         </a>
       </div>

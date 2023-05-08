@@ -22,7 +22,7 @@ const AboutPage = () => {
           width={1131}
           className="float-left mr-6 mt-3 hidden h-1/4 w-1/4 rounded-lg md:block"
         />
-        <div className="mb-6 space-y-3">
+        <div className="mb-8 space-y-3">
           <Mdx code={about.body.code} />
         </div>
         <div className="flex items-center justify-between">

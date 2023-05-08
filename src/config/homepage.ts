@@ -18,7 +18,7 @@ export const homepageConfig = {
     },
   ],
   heroText:
-    "I'm a JavaScript enthusiast with a keen interest in other programming languages too! 🐱‍💻 Currently, I'm a front-end developer, but I'm on my way to becoming a full stack. 🚀",
+    "My relationship with programming and web development started at a young age, and has become my life-long love. I'm a fullstack developer who is very passionate about React & NextJS. 🐱‍💻",
   skills: [
     'HTML',
     'CSS',
