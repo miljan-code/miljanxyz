@@ -3,7 +3,7 @@
 Clone this repo
 
 ```bash
-git clone https://github.com/miljan-code/buy-sell.git
+git clone https://github.com/miljan-code/miljanxyz.git
 ```
 
 Install necessary dependencies
