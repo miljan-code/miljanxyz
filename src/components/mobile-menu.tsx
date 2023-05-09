@@ -29,9 +29,15 @@ const Menu: React.FC<MenuProps> = ({ onCloseMenu }) => {
       <div className="mb-10 flex justify-end px-14 py-5">
         <Icons.Close size={36} onClick={onCloseMenu} />
       </div>
-      <div className="flex flex-col gap-3 px-6">
+      <div onClick={onCloseMenu} className="flex flex-col gap-3">
         {homepageConfig.mainNav.map((item, i) => (
-          <NavLink key={item.label} href={item.href} index={i + 1} size="large">
+          <NavLink
+            key={item.label}
+            href={item.href}
+            index={i + 1}
+            size="large"
+            className="px-6"
+          >
             {item.label}
           </NavLink>
         ))}

@@ -56,7 +56,7 @@ const ProjectPage = async ({ params }: ProjectsPageProps) => {
         <div className="rounded-md border border-l-4 border-primary/25 p-4">
           <p>{description}</p>
         </div>
-        <div className="mb-6 flex items-center justify-between">
+        <div className="mb-6 flex flex-wrap items-center justify-center gap-3 sm:flex-nowrap sm:justify-between">
           <div className="flex items-center justify-center gap-6">
             <a
               href={githubUrl}

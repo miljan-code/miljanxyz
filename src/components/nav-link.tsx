@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
 
-interface NavLinkProps {
+interface NavLinkProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   children: React.ReactNode;
   href: string;
   index: number;
@@ -13,9 +13,10 @@ export const NavLink: React.FC<NavLinkProps> = ({
   href,
   index,
   size = 'default',
+  className,
 }) => {
   return (
-    <Link href={href} className="space-x-0.5">
+    <Link href={href} className={cn('space-x-0.5', className)}>
       <span
         className={cn('text-primary', {
           'text-xs': size === 'default',
