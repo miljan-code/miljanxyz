@@ -1,4 +1,5 @@
 import { Cabin } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/react';
 import { Header } from '@/components/header';
 import { Logo } from '@/components/logo';
 import { Navigation } from '@/components/navigation';
@@ -36,6 +37,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Socials />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
