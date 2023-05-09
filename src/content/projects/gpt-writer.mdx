@@ -1,7 +1,7 @@
 ---
 order: 1
 title: GPT Writer
-description: This project uses Open AI's GPT-3.5 to query prompts and transforms them into a bunch of useful services such as grammar checker, text summarizer, article writer, and paraphraser.
+description: GPT Writer is a Software as a Service (SaaS) project leveraging OpenAI's GPT-3.5 API to provide users with a suite of valuable services, including grammar checking, text summarization, article writing, and paraphrasing.
 coverUrl: /images/project-gpt-writer.png
 techStack:
   - NextJS
@@ -10,3 +10,25 @@ techStack:
 githubUrl: https://github.com/miljan-code/gpt-writer-app
 demoUrl: https://gpt-writer.miljan.xyz/
 ---
+
+The genesis of this project stemmed from the advent of GPT-3.5 and my contemplation on its practical implementation in various contexts. Given that English is not my native language, I frequently rely on grammar checking services when crafting articles or texts intended for a wider readership. This project naturally evolved as a solution to address this need.
+
+The primary aim of this Software as a Service (SaaS) project, aptly named GPT Writer, is to harness the capabilities of OpenAI's GPT-3.5 API. The objective is to offer users a suite of invaluable services, including grammar checking, text summarization, article writing, and paraphrasing. By leveraging GPT-3.5, the project endeavors to enhance writing quality and proficiency, catering to a broader audience.
+
+## Technology Stack and Rationale
+
+The technology stack employed in this SaaS project comprises NextJS, Tailwind, TypeScript, and OpenAI's GPT-3.5. NextJS and Tailwind provide a robust and efficient foundation for building web applications, while TypeScript enhances code maintainability and scalability. OpenAI's GPT-3.5 API serves as the backbone, empowering the application with its natural language processing capabilities.
+
+The workflow entails users inputting text and issuing requests for paraphrasing or grammar checking. These requests are seamlessly transmitted to the backend, acting as a middleware. Within this layer, user input is transformed into GPT-3.5 compatible prompts, initiating subsequent API requests to OpenAI. The resulting responses are seamlessly integrated into the user interface, facilitating a seamless and intuitive user experience.
+
+## Challenges Encountered
+
+The development journey presented an array of challenges, warranting diligent problem-solving solutions. Among the prominent hurdles encountered was the implementation of an efficient grammar checking mechanism capable of preemptively identifying and highlighting erroneous words before user intervention.
+
+To address this challenge, a strategic approach was devised. By incorporating a delay mechanism, whereby an HTTP request is dispatched to GPT-3.5 after a user pauses typing for two seconds, the code is scanned and a JSON response is obtained, denoting poorly written words. By comparing these words with the user's input, the application dynamically highlights errors, enhancing the writing experience.
+
+Another obstacle emerged in the form of text input handling. The utilization of a textarea element proved inadequate for manipulating specific word styles. To circumvent this limitation, the decision was made to employ a content-editable div element, affording greater flexibility in text manipulation and error highlighting.
+
+Further challenges were encountered when handling pasted content, as the content-editable div element introduced formatting inconsistencies. To mitigate this issue, an event listener was implemented to convert pasted content from HTML to plain text, ensuring proper formatting and preserving the integrity of the input.
+
+These challenges merely scratch the surface of the intricate problem-solving required throughout the project's development. Each obstacle was met with determination and resolved through innovative solutions, demonstrating the project's commitment to delivering a robust and user-friendly experience.

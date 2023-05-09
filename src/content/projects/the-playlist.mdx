@@ -1,7 +1,7 @@
 ---
 order: 3
 title: The Playlist
-description: The Playlist is a music streaming application and kind of Spotify clone. This application allows you to listen to various artists, create playlists of your favourite songs, loop them, shuffle etc. It uses Shazam Core API for music data.
+description: The Playlist is a music streaming application akin to a Spotify. The Playlist provide users with features such as song exploration, playlist creation, loop and shuffle functionalities. It uses Shazam Core API for music data.
 coverUrl: /images/project-the-playlist.png
 techStack:
   - React
@@ -10,3 +10,25 @@ techStack:
 githubUrl: https://github.com/miljan-code/the-playlist
 demoUrl: https://the-playlist.miljan.xyz/
 ---
+
+The Playlist is a music streaming application akin to a Spotify. Its primary objective is to provide users with a comprehensive platform for accessing and enjoying music. With features such as song exploration, playlist creation, loop and shuffle functionalities. The Playlist aims to deliver a seamless and captivating music listening experience.
+
+## Technology Stack and Rationale
+
+The technological foundation of The Playlist revolves around TypeScript, React, and Redux. This stack was deliberately chosen for its synergistic qualities, enabling me to efficiently build a robust and responsive music streaming application.
+
+TypeScript enhances code maintainability and scalability, while React facilitates the creation of interactive and dynamic user interfaces. The integration of Redux empowers centralized state management, ensuring seamless data flow throughout the application.
+
+## Challenges Encountered
+
+One notable obstacle arose during the implementation of the audio player, which demanded careful consideration to align it harmoniously with the design requirements. Extensive research and thoughtful deliberation were undertaken to devise a tailored audio player that seamlessly merged functionality with the desired aesthetic.
+
+However, the project encountered an unforeseen setback when access to the API, which had been free until that moment, became unavailable midway through development. To overcome this hurdle, improvisation became necessary, prompting the creation of a substitute API solution that enabled the project's continuity.
+
+Another difficulty surfaced in relation to the implementation of the business logic, specifically concerning the player's timeline. The challenge lay in efficiently handling click events on the SVG-based timeline, with the objective of precisely rewinding the song to the desired time.
+
+A meticulous approach was employed, involving the detection of each click on the timeline and leveraging properties such as offsetX and getBoundingClientRect to accurately determine the click location and the element's width.
+
+Having established the click position and element width, subsequent calculations were performed to ascertain the rewinding percentage of the total width. Leveraging the duration property of the Audio element, the tape was then advanced to the "clicked" percentage, effectively fast-forwarding to the desired point in the song.
+
+While numerous other intriguing situations arose throughout the project's development, delving into their intricacies extends beyond the scope of this presentation.
