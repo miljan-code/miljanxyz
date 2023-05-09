@@ -11,6 +11,8 @@ export function Card({
   color = 'primary',
   direction = 'left',
   children,
+  className,
+  ...props
 }: CardProps) {
   return (
     <div
@@ -35,10 +37,15 @@ export function Card({
         })}
       />
       <div
-        className={cn('relative flex h-full gap-2', {
-          'flex-row-reverse': direction === 'right',
-          'flex-row': direction === 'left',
-        })}
+        className={cn(
+          'relative flex h-full gap-2',
+          {
+            'flex-row-reverse': direction === 'right',
+            'flex-row': direction === 'left',
+          },
+          className
+        )}
+        {...props}
       >
         {children}
       </div>
