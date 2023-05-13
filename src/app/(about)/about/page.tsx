@@ -20,7 +20,7 @@ const AboutPage = () => {
           alt="Miljan Gicic"
           height={1280}
           width={1131}
-          className="float-left mr-6 mt-3 hidden h-1/4 w-1/4 rounded-lg md:block"
+          className="float-left mr-6 mt-3 hidden h-1/4 w-1/4 rounded-lg bg-transparent md:block"
         />
         <div className="mb-8 space-y-3">
           <Mdx code={about.body.code} />
