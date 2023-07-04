@@ -6,6 +6,7 @@ import { Heading } from '@/components/ui/heading';
 import { Card } from '@/components/ui/card';
 import { Divider } from '@/components/divider';
 import { Icons } from '@/components/ui/icons';
+import { Callout } from '@/components/ui/callout';
 
 interface ProjectsPageProps {
   params: { slug: string };
@@ -35,14 +36,12 @@ const ProjectPage = async ({ params }: ProjectsPageProps) => {
 
   return (
     <section className="bg-dark pt-28 text-light">
-      <div className="mt-4 flex items-center justify-center">
-        <Heading className="pb-4 sm:pb-6">
+      <div className="mx-auto flex max-w-3xl flex-col gap-6 px-10 xl:px-0">
+        <Heading className="mt-4 pb-4 sm:pb-6">
           <Heading.Label className="text-3xl sm:text-5xl">
             {project.title}
           </Heading.Label>
         </Heading>
-      </div>
-      <div className="mx-auto flex max-w-3xl flex-col gap-6 px-10 xl:px-0">
         <Card className="flex items-center justify-center">
           <Image
             src={coverUrl}
@@ -53,9 +52,9 @@ const ProjectPage = async ({ params }: ProjectsPageProps) => {
             className="mx-auto h-fit w-2/3"
           />
         </Card>
-        <div className="rounded-md border border-l-4 border-primary/25 p-4">
+        <Callout variant="primary">
           <p>{description}</p>
-        </div>
+        </Callout>
         <div className="mb-6 flex flex-wrap items-center justify-center gap-3 sm:flex-nowrap sm:justify-between">
           <div className="flex items-center justify-center gap-6">
             <a

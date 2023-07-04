@@ -57,7 +57,7 @@ export const Project: React.FC<ProjectProps> = ({
           </a>
         </div>
       </Card.Content>
-      <Card.Image src={coverUrl} alt={title} />
+      <Card.Image src={coverUrl} alt={title} className="pb-6" />
     </Card>
   );
 };

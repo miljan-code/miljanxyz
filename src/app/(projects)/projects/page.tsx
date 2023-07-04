@@ -8,6 +8,7 @@ const ProjectsPage = () => {
   return (
     <section className="bg-dark pt-28 text-light">
       <Heading className="mb-6">
+        <Heading.Sublabel>I like building stuff</Heading.Sublabel>
         <Heading.Label>My work.</Heading.Label>
       </Heading>
       <div className="mx-auto flex max-w-5xl flex-col gap-20 px-10 pb-16 xl:px-0">

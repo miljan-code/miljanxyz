@@ -9,6 +9,7 @@ import {
   Mail,
   Menu,
   X,
+  Medal,
 } from 'lucide-react';
 
 export const Icons = {
@@ -22,4 +23,5 @@ export const Icons = {
   Mail,
   Menu,
   Close: X,
+  Medal,
 };

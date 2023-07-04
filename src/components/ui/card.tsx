@@ -68,13 +68,13 @@ interface CardImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {}
 
 Card.Image = function CardImage({ src, alt, className }: CardImageProps) {
   return (
-    <div className="hidden flex-1 items-end pb-6 sm:flex">
+    <div className="hidden flex-1 items-end sm:flex">
       <Image
         src={src || ''}
         alt={alt || ''}
         width={970}
         height={570}
-        className={cn('h-auto w-full object-cover', className)}
+        className={cn('h-fit w-full object-cover', className)}
       />
     </div>
   );
