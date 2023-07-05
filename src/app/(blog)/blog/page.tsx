@@ -21,7 +21,7 @@ const BlogPage = () => {
           </Heading.Label>
         </Heading>
         {article && (
-          <Card color="light">
+          <Card color="light" className="flex-col sm:flex-row">
             <Card.Content>
               <Heading.Sublabel className="flex items-center gap-2">
                 <span className="text-white">Featured Article</span>{' '}
@@ -39,7 +39,7 @@ const BlogPage = () => {
                 Read more
               </UnderlinedLink>
             </Card.Content>
-            <div className="relative m-6 flex flex-1 items-center justify-center">
+            <div className="relative m-6 hidden flex-1 items-center justify-center sm:flex">
               <Link href={`/blog/${article.slug}`}>
                 <Image
                   src={article.coverUrl}

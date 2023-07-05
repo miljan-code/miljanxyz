@@ -17,7 +17,7 @@ export const Header: React.FC<HeaderProps> = ({ children }) => {
     <header
       className={`
       ${scrollPosition === 0 ? 'shadow-none' : 'shadow-md'}
-      fixed z-100 flex w-full items-center justify-between bg-dark/95 px-14 py-4 text-white backdrop-blur-xs
+      fixed z-100 flex w-full items-center justify-between bg-dark/95 px-10 py-4 text-white backdrop-blur-xs lg:px-14
       `}
     >
       {children}
